@@ -11,11 +11,15 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author poppe
  */
-public class OrdenamientosGUI extends javax.swing.JFrame {
+public class OrdenamientosGUI extends javax.swing.JFrame{
 
     static int[] arreglo1 = new int[100];
     static int[] arreglo2 = new int[500];
@@ -27,6 +31,29 @@ public class OrdenamientosGUI extends javax.swing.JFrame {
     static int[] arreglo8 = new int[5000];
     static int[] arreglo9 = new int[7000];
     static int[] arreglo10 = new int[10000];
+    static int[] arreglo1Caso2 = new int[100];
+    static int[] arreglo2Caso2 = new int[500];
+    static int[] arreglo3Caso2 = new int[1000];
+    static int[] arreglo4Caso2 = new int[1500];
+    static int[] arreglo5Caso2 = new int[2000];
+    static int[] arreglo6Caso2 = new int[3000];
+    static int[] arreglo7Caso2 = new int[4000];
+    static int[] arreglo8Caso2 = new int[5000];
+    static int[] arreglo9Caso2 = new int[7000];
+    static int[] arreglo10Caso2 = new int[10000];
+    static int[] arreglo1Caso3 = new int[100];
+    static int[] arreglo2Caso3 = new int[500];
+    static int[] arreglo3Caso3 = new int[1000];
+    static int[] arreglo4Caso3 = new int[1500];
+    static int[] arreglo5Caso3 = new int[2000];
+    static int[] arreglo6Caso3 = new int[3000];
+    static int[] arreglo7Caso3 = new int[4000];
+    static int[] arreglo8Caso3 = new int[5000];
+    static int[] arreglo9Caso3 = new int[7000];
+    static int[] arreglo10Caso3 = new int[10000];
+    static List<int[]> listaArreglos = new ArrayList<>();
+    static List<int[]> listaArreglosCaso2 = new ArrayList<>();
+    static List<int[]> listaArreglosCaso3 = new ArrayList<>();
     /**
      * Creates new form OrdenamientosGUI
      */
@@ -43,21 +70,326 @@ public class OrdenamientosGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        BotonCorrer = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        mergeSortCaso1 = new javax.swing.JCheckBox();
+        sortCaso1 = new javax.swing.JCheckBox();
+        parallelCaso1 = new javax.swing.JCheckBox();
+        quickSortCaso2 = new javax.swing.JCheckBox();
+        mergeSortCaso2 = new javax.swing.JCheckBox();
+        sortCaso2 = new javax.swing.JCheckBox();
+        parallelCaso2 = new javax.swing.JCheckBox();
+        parallelCaso3 = new javax.swing.JCheckBox();
+        sortCaso3 = new javax.swing.JCheckBox();
+        mergeSortCaso3 = new javax.swing.JCheckBox();
+        quickSortCaso3 = new javax.swing.JCheckBox();
+        quickSortCaso1 = new javax.swing.JCheckBox();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 255, 255));
+        setLocationByPlatform(true);
+
+        jPanel1.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(0, 255, 255));
+
+        jPanel2.setBackground(new java.awt.Color(0, 153, 255));
+
+        BotonCorrer.setText("Correr");
+        BotonCorrer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCorrerActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Quick Sort");
+
+        jLabel2.setText("Merge Sort");
+
+        jLabel3.setText("Arrays.sort()");
+
+        jLabel4.setText("Arrays.parallelSort()");
+
+        jLabel5.setText("Caso 1");
+
+        jLabel6.setText("Caso 2");
+
+        jLabel7.setText("Caso 3");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonCorrer)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(mergeSortCaso1)
+                            .addComponent(sortCaso1)
+                            .addComponent(parallelCaso1)
+                            .addComponent(quickSortCaso1))
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(quickSortCaso2)
+                            .addComponent(mergeSortCaso2)
+                            .addComponent(sortCaso2)
+                            .addComponent(parallelCaso2))
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(parallelCaso3)
+                            .addComponent(sortCaso3)
+                            .addComponent(mergeSortCaso3)
+                            .addComponent(quickSortCaso3))))
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(quickSortCaso2)
+                                .addGap(9, 9, 9)
+                                .addComponent(mergeSortCaso2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(sortCaso2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(parallelCaso2))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(quickSortCaso3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(mergeSortCaso3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(sortCaso3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(parallelCaso3)))
+                        .addGap(62, 62, 62)
+                        .addComponent(BotonCorrer))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(mergeSortCaso1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(sortCaso1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(parallelCaso1))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4))))
+                    .addComponent(quickSortCaso1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonCorrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCorrerActionPerformed
+        //Seccion donde se realiza los casos
+        List<String> archivos = new ArrayList<String>();
+        if(quickSortCaso1.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                quickSort(Arrays.copyOf(listaArreglos.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("quickSortCaso1",tiempos);
+            archivos.add("quickSortCaso1");
+        }
+        if(quickSortCaso2.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                quickSort(Arrays.copyOf(listaArreglosCaso2.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("quickSortCaso2",tiempos);
+            archivos.add("quickSortCaso2");
+        }
+        if(quickSortCaso3.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                quickSort(Arrays.copyOf(listaArreglosCaso3.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("quickSortCaso3",tiempos);
+            archivos.add("quickSortCaso3");
+        }
+        if(mergeSortCaso1.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                mergeSort(Arrays.copyOf(listaArreglos.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("mergeSortCaso1",tiempos);
+            archivos.add("mergeSortCaso1");
+        }
+        if(mergeSortCaso2.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                mergeSort(Arrays.copyOf(listaArreglosCaso2.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("mergeSortCaso2",tiempos);
+            archivos.add("mergeSortCaso2");
+        }
+        if(mergeSortCaso3.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                mergeSort(Arrays.copyOf(listaArreglosCaso3.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("mergeSortCaso3",tiempos);
+            archivos.add("mergeSortCaso3");
+        }
+        if(sortCaso1.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                ArraySort(Arrays.copyOf(listaArreglos.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("ArraySortCaso1",tiempos);
+            archivos.add("ArraySortCaso1");
+        }
+        if(sortCaso2.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                ArraySort(Arrays.copyOf(listaArreglosCaso2.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("ArraySortCaso2",tiempos);
+            archivos.add("ArraySortCaso2");
+        }
+        if(sortCaso3.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                ArraySort(Arrays.copyOf(listaArreglosCaso3.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("ArraySortCaso3",tiempos);
+            archivos.add("ArraySortCaso3");
+        }
+        if(parallelCaso1.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                ArrayParallelSort(Arrays.copyOf(listaArreglos.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("ParallelSortCaso1",tiempos);
+            archivos.add("ParallelSortCaso1");
+        }
+        if(parallelCaso2.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                ArrayParallelSort(Arrays.copyOf(listaArreglosCaso2.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("ParallelSortCaso2",tiempos);
+            archivos.add("ParallelSortCaso2");
+        }
+        if(parallelCaso3.isSelected()){
+            long[] tiempos = new long[10];
+            for(int i = 0; i < listaArreglos.size(); i++){
+                long tiempoInicial = System.nanoTime();
+                ArrayParallelSort(Arrays.copyOf(listaArreglosCaso3.get(i), listaArreglos.get(i).length));
+                long tiempoFin = System.nanoTime();
+                tiempos[i] = tiempoFin - tiempoInicial;
+            }
+            escribirArchivo("ParallelSortCaso3",tiempos);
+            archivos.add("ParallelSortCaso3");
+        }
+        //Seccion donde se realiza la grafica
+         if(archivos.isEmpty()){}
+        else{
+            try {
+                Graficar grafica = new Graficar("Graficas de los ordenamientos","Tiempo para ordenar arreglos",archivos);
+            } catch (IOException ex) {
+            Logger.getLogger(OrdenamientosGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }    
+    }//GEN-LAST:event_BotonCorrerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -91,72 +423,139 @@ public class OrdenamientosGUI extends javax.swing.JFrame {
             public void run() {
                 new OrdenamientosGUI().setVisible(true);
                 Random rmd = new Random();
-                long tiempoInicio = System.nanoTime();
                 for(int n = 0; n < arreglo1.length; n++){
                     arreglo1[n] = rmd.nextInt(arreglo1.length);
                 }
+                listaArreglos.add(arreglo1);
+                arreglo1Caso2 = Arrays.copyOf(arreglo1, arreglo1.length);
+                quickSort(arreglo1Caso2);
+                arreglo1Caso3 = Arrays.copyOf(arreglo1Caso2, arreglo1.length);
+                reversa(arreglo1Caso3);
+                listaArreglosCaso2.add(arreglo1Caso2);
+                listaArreglosCaso3.add(arreglo1Caso3);
                 for(int n = 0; n < arreglo2.length; n++){
                     arreglo2[n] = rmd.nextInt(arreglo2.length);
                 }
+                listaArreglos.add(arreglo2);
+                arreglo2Caso2 = Arrays.copyOf(arreglo2, arreglo2.length);
+                quickSort(arreglo2Caso2);
+                arreglo2Caso3 = Arrays.copyOf(arreglo2Caso2, arreglo2.length);
+                reversa(arreglo2Caso3);
+                listaArreglosCaso2.add(arreglo2Caso2);
+                listaArreglosCaso3.add(arreglo2Caso3);
                 for(int n = 0; n < arreglo3.length; n++){
                     arreglo3[n] = rmd.nextInt(arreglo3.length);
                 }
+                listaArreglos.add(arreglo3);
+                arreglo3Caso2 = Arrays.copyOf(arreglo3, arreglo3.length);
+                quickSort(arreglo3Caso2);
+                arreglo3Caso3 = Arrays.copyOf(arreglo3Caso2, arreglo3.length);
+                reversa(arreglo3Caso3);
+                listaArreglosCaso2.add(arreglo3Caso2);
+                listaArreglosCaso3.add(arreglo3Caso3);
                 for(int n = 0; n < arreglo4.length; n++){
                     arreglo4[n] = rmd.nextInt(arreglo4.length);
                 }
+                listaArreglos.add(arreglo4);
+                arreglo4Caso2 = Arrays.copyOf(arreglo4, arreglo4.length);
+                quickSort(arreglo4Caso2);
+                arreglo4Caso3 = Arrays.copyOf(arreglo4Caso2, arreglo4.length);
+                reversa(arreglo4Caso3);
+                listaArreglosCaso2.add(arreglo4Caso2);
+                listaArreglosCaso3.add(arreglo4Caso3);
                 for(int n = 0; n < arreglo5.length; n++){
                     arreglo5[n] = rmd.nextInt(arreglo5.length);
                 }
+                listaArreglos.add(arreglo5);
+                arreglo5Caso2 = Arrays.copyOf(arreglo5, arreglo5.length);
+                quickSort(arreglo5Caso2);
+                arreglo5Caso3 = Arrays.copyOf(arreglo5Caso2, arreglo5.length);
+                reversa(arreglo5Caso3);
+                listaArreglosCaso2.add(arreglo5Caso2);
+                listaArreglosCaso3.add(arreglo5Caso3);
                 for(int n = 0; n < arreglo6.length; n++){
                     arreglo6[n] = rmd.nextInt(arreglo6.length);
                 }
+                listaArreglos.add(arreglo6);
+                arreglo6Caso2 = Arrays.copyOf(arreglo6, arreglo6.length);
+                quickSort(arreglo6Caso2);
+                arreglo6Caso3 = Arrays.copyOf(arreglo6Caso2, arreglo6.length);
+                reversa(arreglo6Caso3);
+                listaArreglosCaso2.add(arreglo6Caso2);
+                listaArreglosCaso3.add(arreglo6Caso3);
                 for(int n = 0; n < arreglo7.length; n++){
                     arreglo7[n] = rmd.nextInt(arreglo7.length);
                 }
+                listaArreglos.add(arreglo7);
+                arreglo7Caso2 = Arrays.copyOf(arreglo7, arreglo7.length);
+                quickSort(arreglo7Caso2);
+                arreglo7Caso3 = Arrays.copyOf(arreglo7Caso2, arreglo7.length);
+                reversa(arreglo7Caso3);
+                listaArreglosCaso2.add(arreglo7Caso2);
+                listaArreglosCaso3.add(arreglo7Caso3);
                 for(int n = 0; n < arreglo8.length; n++){
                     arreglo8[n] = rmd.nextInt(arreglo8.length);
                 }
+                listaArreglos.add(arreglo8);
+                arreglo8Caso2 = Arrays.copyOf(arreglo8, arreglo8.length);
+                quickSort(arreglo8Caso2);
+                arreglo8Caso3 = Arrays.copyOf(arreglo8Caso2, arreglo8.length);
+                reversa(arreglo8Caso3);
+                listaArreglosCaso2.add(arreglo8Caso2);
+                listaArreglosCaso3.add(arreglo8Caso3);
                 for(int n = 0; n < arreglo9.length; n++){
                     arreglo9[n] = rmd.nextInt(arreglo9.length);
                 }
+                listaArreglos.add(arreglo9);
+                arreglo9Caso2 = Arrays.copyOf(arreglo9, arreglo9.length);
+                quickSort(arreglo9Caso2);
+                arreglo9Caso3 = Arrays.copyOf(arreglo9Caso2, arreglo9.length);
+                reversa(arreglo9Caso3);
+                listaArreglosCaso2.add(arreglo9Caso2);
+                listaArreglosCaso3.add(arreglo9Caso3);
                 for(int n = 0; n < arreglo1.length; n++){
                     arreglo10[n] = rmd.nextInt(arreglo10.length);
                 }
-                long tiempoFin = System.nanoTime();
-                long tiempo = tiempoFin - tiempoInicio;
-                System.out.println("Tiempo de ejecucion:"+tiempo);
+                listaArreglos.add(arreglo10);    
+                arreglo10Caso2 = Arrays.copyOf(arreglo10, arreglo10.length);
+                quickSort(arreglo10Caso2);
+                arreglo10Caso3 = Arrays.copyOf(arreglo10Caso2, arreglo10.length);
+                reversa(arreglo10Caso3);
+                listaArreglosCaso2.add(arreglo10Caso2);
+                listaArreglosCaso3.add(arreglo10Caso3);
             }
         });
     }
     
-    public static void escribirArchivo(String nombreArchivo){
+    public static void escribirArchivo(String nombreArchivo,long[] tiempos){
         File file = new File("./"+nombreArchivo);
         try{
             FileWriter outputfile = new FileWriter(file);
             
             CSVWriter writer = new CSVWriter(outputfile);
-            /*
+            String[] header = {"noCorrida","dimensionArreglo","tiempo"};
+            writer.writeNext(header);
             String[] data1 = {"1","100",tiempos[0]+""};
             writer.writeNext(data1);
             String[] data2 = {"2","500",tiempos[1]+""};
             writer.writeNext(data2);
-            String[] data3 = {"2","1000",tiempos[2]+""};
+            String[] data3 = {"3","1000",tiempos[2]+""};
             writer.writeNext(data3);
-            String[] data4 = {"2","1500",tiempos[3]+""};
+            String[] data4 = {"4","1500",tiempos[3]+""};
             writer.writeNext(data4);
-            String[] data5 = {"2","2000",tiempos[4]+""};
+            String[] data5 = {"5","2000",tiempos[4]+""};
             writer.writeNext(data5);
-            String[] data6 = {"2","3000",tiempos[5]+""};
+            String[] data6 = {"6","3000",tiempos[5]+""};
             writer.writeNext(data6);
-            String[] data7 = {"2","4000",tiempos[6]+""};
+            String[] data7 = {"7","4000",tiempos[6]+""};
             writer.writeNext(data7);
-            String[] data8 = {"2","5000",tiempos[7]+""};
+            String[] data8 = {"8","5000",tiempos[7]+""};
             writer.writeNext(data8);
-            String[] data9 = {"2","7000",tiempos[8]+""};
+            String[] data9 = {"9","7000",tiempos[8]+""};
             writer.writeNext(data9);
-            String[] data10 = {"2","10000",tiempos[9]+""};
+            String[] data10 = {"10","10000",tiempos[9]+""};
             writer.writeNext(data10);
-            */ /*
+            /*
             String[] data = {"1","100","1000"};
             writer.writeNext(data);
             */ //Prueba para escribir archivos 
@@ -164,22 +563,171 @@ public class OrdenamientosGUI extends javax.swing.JFrame {
         } catch(IOException e){}
     }
     
+    public static void quickSort(int arreglo[]){
+        recursivo(0, arreglo.length-1, arreglo);
+    }
+    
+    public static void recursivo(int ini, int fin, int a[]){
+        int izq = ini;
+        int v = 0;
+        int F = 1;
+        int der = fin;
+        int pos = ini;
+        int band = v;
+        while(band == v){
+            band = F;
+            while((pos != der) && (a[pos] <= a[der])){
+                der = der - 1;
+            }
+            if(pos != der){
+                int aux = a[pos];
+                a[pos] = a[der];
+                a[der] = aux;
+                pos = der;
+                while((a[pos] >= a[izq]) && (pos != izq)){
+                    izq = izq + 1;
+                }
+                if(pos != izq){
+                    band = v;
+                    aux = a[pos];
+                    a[pos] = a[izq];
+                    a[izq] = aux;
+                    pos = izq;
+                }
+            }
+        }
+        if((pos - 1) > ini){
+            recursivo(ini, pos - 1, a);
+        } 
+        if(fin > (pos + 1)){
+            recursivo(pos + 1, fin, a);
+        }
+    }
+    
+    public static void mergeSort(int arreglo[]){
+        sort(arreglo,0,arreglo.length-1);
+    }
+    
+    public static void sort(int arreglo[],int izq, int der){
+        if(izq < der){
+            int centro = (izq + der) / 2;
+            
+            sort(arreglo,izq,centro);
+            sort(arreglo, centro+1, der);
+            
+            merge(arreglo,izq,centro,der);
+        }
+    }
+    
+    public static void merge(int arreglo[],int izq, int centro, int der){
+        int n1 = centro - izq + 1;
+        int n2 = der - centro;
+        
+        int arrayIzq[] = new int[n1];
+        int arrayDer[] = new int[n2];
+        
+        for(int i = 0; i < n1; i++){
+            arrayIzq[i] = arreglo[izq+i];
+        }
+        
+        for(int j = 0; j < n2; j++){
+            arrayDer[j] = arreglo[centro + j + 1];
+        }
+        
+        int i =0, j = 0;
+        
+        int k = izq;
+        
+        while((i < n1) && (j < n2)){
+            if(arrayIzq[i] <= arrayDer[j]){
+                arreglo[k] = arrayIzq[i];
+                i++;
+            } else {
+                arreglo[k] = arrayDer[j];
+                j++;
+            }
+            k++;
+        }
+        
+        while(i < n1){
+            arreglo[k] = arrayIzq[i];
+            i++;
+            k++;
+        }
+        
+        while(j < n2){
+            arreglo[k] = arrayDer[j];
+            j++;
+            k++;
+        }
+    }
+    
+    public static void ArraySort(int[] arreglo){
+        Arrays.sort(arreglo);
+    }
+    
+    public static void ArrayParallelSort(int[] arreglo){
+        Arrays.parallelSort(arreglo);
+    }
+    //Se queda el metodo para pruebas, utilizado en el graficador
     public static void leerArchivo(String nombreArchivo){
         try{
             FileReader filereader = new FileReader(nombreArchivo);
             
             CSVReader csvReader = new CSVReader(filereader);
             String[] datos;
+            List<String> contenido = new ArrayList<>();
             //Lectura de datos / Modificar para guardar datos para graficar 
             while((datos = csvReader.readNext()) != null) { 
-            for (String cell : datos) { 
-                System.out.print(cell + "\t"); 
-            } 
-            System.out.println(); 
-        } 
+                for(String cell : datos) { 
+                    contenido.add(cell);
+                } 
+            }
+            int cont = 1;
+            String contador = String.valueOf(cont);
+            for(int i = 0; i < contenido.size(); i++){
+                System.out.println(i + " " + contenido.get(i));
+                if(contenido.get(i).compareTo(contador) == 0){
+                    System.out.print(" Informacion conseguida: " + contenido.get(i+1) + " y " + contenido.get(i+2));
+                    cont++;
+                    contador = String.valueOf(cont);
+                }
+            }
         } catch(IOException e){}
     }
     
+    public static void reversa(int[] arreglo){
+        int i, k, t;
+        int n = arreglo.length;
+        for(i = 0;i < n / 2; i++){
+            t = arreglo[i];
+            arreglo[i] = arreglo[n - i - 1];
+            arreglo[n - i - 1] = t;
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonCorrer;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JCheckBox mergeSortCaso1;
+    private javax.swing.JCheckBox mergeSortCaso2;
+    private javax.swing.JCheckBox mergeSortCaso3;
+    private javax.swing.JCheckBox parallelCaso1;
+    private javax.swing.JCheckBox parallelCaso2;
+    private javax.swing.JCheckBox parallelCaso3;
+    private javax.swing.JCheckBox quickSortCaso1;
+    private javax.swing.JCheckBox quickSortCaso2;
+    private javax.swing.JCheckBox quickSortCaso3;
+    private javax.swing.JCheckBox sortCaso1;
+    private javax.swing.JCheckBox sortCaso2;
+    private javax.swing.JCheckBox sortCaso3;
     // End of variables declaration//GEN-END:variables
 }

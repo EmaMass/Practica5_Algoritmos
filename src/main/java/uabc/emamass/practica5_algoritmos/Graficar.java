@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package uabc.emamass.practica5_algoritmos;
+import au.com.bytecode.opencsv.CSVReader;
 import java.io.*;
 import java.awt.Color; 
 import java.awt.BasicStroke; 
@@ -18,19 +19,21 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.plot.PlotOrientation; 
 import org.jfree.data.xy.XYSeriesCollection; 
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author poppe
  */
 public class Graficar extends ApplicationFrame{
-     
-     public Graficar(String applicationTitle,String chartTitle) throws IOException {
+    
+     public Graficar(String applicationTitle, String chartTitle, List<String> archivos) throws IOException {
       super(applicationTitle);
       JFreeChart xylineChart = ChartFactory.createXYLineChart(
          chartTitle,
-         "Valor N",
-         "Tiempo (Nano)",
-         createDataset(),
+         "Tamaño del arreglo",
+         "Tiempo (Nanosegundos)",
+         createDataset(archivos),
          PlotOrientation.VERTICAL,
          true ,true ,false);
          
@@ -47,54 +50,28 @@ public class Graficar extends ApplicationFrame{
       renderer.setSeriesStroke(2 ,new BasicStroke( 2.0f ));
       plot.setRenderer(renderer); 
       setContentPane(chartPanel); 
-      File XYChart = new File("XYChartn2000.jpeg");
+      File XYChart = new File("XYChartOrdenamientos.jpeg");
       ChartUtilities.saveChartAsJPEG(XYChart,xylineChart,560,367);
+      
+      pack();          
+      RefineryUtilities.centerFrameOnScreen(Graficar.this);          
+      setVisible(true); 
    }
    
-   private XYDataset createDataset() {
-      final XYSeries iterativa = new XYSeries("Iterativa");          
-        int i = 10;
-        long MAX = 2000;
-        for(i = 10; i <= MAX; i *= 2){
-            long startTimeIterativa = System.nanoTime();
-            long n = sumatoria0aN(i);
-            long endTimeIterativa = System.nanoTime();
-            long resulTime = Math.abs(startTimeIterativa - endTimeIterativa);
-            iterativa.add(n,resulTime);
-        }
+   private XYDataset createDataset(List<String> archivos) {
+      List<XYSeries> listaGrafica = new ArrayList<XYSeries>();
+      final XYSeriesCollection dataset = new XYSeriesCollection();
+      int contador = 0;
+         for(String archivo : archivos){
+             listaGrafica.add(leerArchivo(archivo));
+             dataset.addSeries(listaGrafica.get(contador));
+             contador++;
+         }
       
-      final XYSeries gauss = new XYSeries("Gauss");
-      for(i = 10; i <= MAX; i *= 2){
-          long startTimeGauss = System.nanoTime();
-          long n = sumatoriaGauss(i);
-          long endTimeGauss = System.nanoTime();
-          long resulTime = Math.abs(startTimeGauss - endTimeGauss);
-          gauss.add(n,resulTime);
-      }
-      
-      final XYSeries recursiva = new XYSeries("Recursiva");
-      for(i = 10; i <= MAX; i *= 2){
-          long startTimeRecursiva = System.nanoTime();
-          long n = sumatoriaRecursiva(i,0);
-          long endTimeRecursiva = System.nanoTime();
-          long resulTime = Math.abs(startTimeRecursiva - endTimeRecursiva);
-          recursiva.add(n,resulTime);
-      }
-      
-      final XYSeriesCollection dataset = new XYSeriesCollection( );          
-      dataset.addSeries(iterativa);      
-      dataset.addSeries(gauss);
-      dataset.addSeries(recursiva);
       return dataset;
    }
 
-   public void graficar() throws IOException {
-      Graficar chart = new Graficar("Graficas Analisis Algoritmos",
-         "Tarea Analisis de Algoritmos");
-      chart.pack();          
-      RefineryUtilities.centerFrameOnScreen(chart);          
-      chart.setVisible(true); 
-   }
+   public void graficar() throws IOException {}
    
    public long sumatoria0aN(long n){
         long sumatoria = 0;
@@ -114,5 +91,32 @@ public class Graficar extends ApplicationFrame{
        } else{
            return i + sumatoriaRecursiva(n,i+1);
        }
+   }
+   
+   public XYSeries leerArchivo(String nombreArchivo){
+       XYSeries linea = new XYSeries(nombreArchivo); 
+       try{
+            FileReader filereader = new FileReader(nombreArchivo);
+            
+            CSVReader csvReader = new CSVReader(filereader);
+            String[] datos;
+            List<String> contenido = new ArrayList<>();
+            //Lectura de datos / Modificar para guardar datos para graficar 
+            while((datos = csvReader.readNext()) != null) { 
+                for (String cell : datos) { 
+                    contenido.add(cell);
+                } 
+            }
+            int cont = 1;
+            String contador = String.valueOf(cont);
+            for(int i = 0; i < contenido.size(); i++){
+                if(contenido.get(i).compareTo(contador) == 0){
+                    linea.add(Integer.valueOf(contenido.get(i)), Integer.valueOf(contenido.get(i+2)));
+                    cont++;
+                    contador = String.valueOf(cont);
+                }
+            }
+        } catch(IOException e){}
+        return linea;
    }
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>uabc.EmaMass</groupId>
+    <artifactId>Practica5_Algoritmos</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>2.3</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.5.4</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>jfree</groupId>
+            <artifactId>jcommon</artifactId>
+            <version>1.0.16</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.0.13</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <exec.mainClass>uabc.emamass.practica5_algoritmos.Practica5_Algoritmos</exec.mainClass>
+    </properties>
+</project>

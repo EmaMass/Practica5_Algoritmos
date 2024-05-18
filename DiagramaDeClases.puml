@@ -1,0 +1,110 @@
+@startuml
+annotation java.lang.SuppressWarnings
+class au.com.bytecode.opencsv.CSVReader
+class au.com.bytecode.opencsv.CSVWriter
+class java.awt.BasicStroke
+class java.awt.Color
+class java.io.File
+class java.io.FileReader
+class java.io.FileWriter
+class java.io.IOException
+class java.util.ArrayList
+class java.util.Arrays
+class java.util.List
+class java.util.Random
+class java.util.logging.Level
+class java.util.logging.Logger
+class javax.swing.JFrame
+class org.jfree.chart.ChartFactory
+class org.jfree.chart.ChartPanel
+class org.jfree.chart.JFreeChart
+class org.jfree.chart.plot.PlotOrientation
+class org.jfree.chart.plot.XYPlot
+class org.jfree.chart.renderer.xy.XYLineAndShapeRenderer
+class org.jfree.data.xy.XYDataset
+class org.jfree.data.xy.XYSeries
+class org.jfree.data.xy.XYSeriesCollection
+class org.jfree.ui.ApplicationFrame
+class org.jfree.ui.RefineryUtilities
+class uabc.emamass.practica5_algoritmos.Graficar{
+    +Graficar(String applicationTitle, String chartTitle, List<String> archivos)
+    -XYDataset createDataset(List<String> archivos)
+    +XYSeries leerArchivo(String nombreArchivo)
+}
+class uabc.emamass.practica5_algoritmos.OrdenamientosGUI{
+    -void BotonCorrerActionPerformed(java.awt.event.ActionEvent evt)
+    +static void main(String args[])
+    +static void escribirArchivo(String nombreArchivo,long[] tiempos)
+    +static void quickSort(int arreglo[])
+    +static void recursivo(int ini, int fin, int a[])
+    +static void mergeSort(int arreglo[])
+    +static void sort(int arreglo[],int izq, int der)
+    +static void merge(int arreglo[],int izq, int centro, int der)
+    +static void ArraySort(int[] arreglo)
+    +static void ArrayParallelSort(int[] arreglo)
+    +static void reversa(int[] arreglo)
+    +static int[] arreglo1 
+    +static int[] arreglo2 
+    +static int[] arreglo3 
+    +static int[] arreglo4 
+    +static int[] arreglo5 
+    +static int[] arreglo6 
+    +static int[] arreglo7 
+    +static int[] arreglo8 
+    +static int[] arreglo9 
+    +static int[] arreglo10 
+    +static int[] arreglo1Caso2 
+    +static int[] arreglo2Caso2 
+    +static int[] arreglo3Caso2 
+    +static int[] arreglo4Caso2 
+    +static int[] arreglo5Caso2 
+    +static int[] arreglo6Caso2 
+    +static int[] arreglo7Caso2 
+    +static int[] arreglo8Caso2 
+    +static int[] arreglo9Caso2 
+    +static int[] arreglo10Caso2 
+    +static int[] arreglo1Caso3 
+    +static int[] arreglo2Caso3 
+    +static int[] arreglo3Caso3 
+    +static int[] arreglo4Caso3 
+    +static int[] arreglo5Caso3 
+    +static int[] arreglo6Caso3 
+    +static int[] arreglo7Caso3 
+    +static int[] arreglo8Caso3 
+    +static int[] arreglo9Caso3 
+    +static int[] arreglo10Caso3 
+    +static List<int[]> listaArreglos 
+    +static List<int[]> listaArreglosCaso2 
+    +static List<int[]> listaArreglosCaso3 
+}
+uabc.emamass.practica5_algoritmos.Graficar ..> au.com.bytecode.opencsv.CSVReader
+uabc.emamass.practica5_algoritmos.Graficar ..> java.awt.BasicStroke
+uabc.emamass.practica5_algoritmos.Graficar ..> java.awt.Color
+uabc.emamass.practica5_algoritmos.Graficar ..> java.util.ArrayList
+uabc.emamass.practica5_algoritmos.Graficar ..> java.util.List
+uabc.emamass.practica5_algoritmos.Graficar ..> org.jfree.chart.ChartFactory
+uabc.emamass.practica5_algoritmos.Graficar ..> org.jfree.chart.ChartPanel
+uabc.emamass.practica5_algoritmos.Graficar ..> org.jfree.chart.JFreeChart
+uabc.emamass.practica5_algoritmos.Graficar ..> org.jfree.chart.plot.PlotOrientation
+uabc.emamass.practica5_algoritmos.Graficar ..> org.jfree.chart.plot.XYPlot
+uabc.emamass.practica5_algoritmos.Graficar ..> org.jfree.chart.renderer.xy.XYLineAndShapeRenderer
+uabc.emamass.practica5_algoritmos.Graficar ..> org.jfree.data.xy.XYDataset
+uabc.emamass.practica5_algoritmos.Graficar ..> org.jfree.data.xy.XYSeries
+uabc.emamass.practica5_algoritmos.Graficar ..> org.jfree.data.xy.XYSeriesCollection
+uabc.emamass.practica5_algoritmos.Graficar --|> org.jfree.ui.ApplicationFrame
+uabc.emamass.practica5_algoritmos.Graficar ..> org.jfree.ui.RefineryUtilities
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> java.lang.SuppressWarnings
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> au.com.bytecode.opencsv.CSVReader
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> au.com.bytecode.opencsv.CSVWriter
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> java.io.File
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> java.io.FileReader
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> java.io.FileWriter
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> java.io.IOException
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> java.util.ArrayList
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> java.util.Arrays
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> java.util.List
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> java.util.Random
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> java.util.logging.Level
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI ..> java.util.logging.Logger
+uabc.emamass.practica5_algoritmos.OrdenamientosGUI --|> javax.swing.JFrame
+@enduml

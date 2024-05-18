@@ -20,7 +20,6 @@ import java.util.logging.Logger;
  * @author poppe
  */
 public class OrdenamientosGUI extends javax.swing.JFrame{
-
     static int[] arreglo1 = new int[100];
     static int[] arreglo2 = new int[500];
     static int[] arreglo3 = new int[1000];

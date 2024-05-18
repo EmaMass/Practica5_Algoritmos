@@ -73,26 +73,6 @@ public class Graficar extends ApplicationFrame{
 
    public void graficar() throws IOException {}
    
-   public long sumatoria0aN(long n){
-        long sumatoria = 0;
-        for(int i = 0; i <= n; i++){
-            sumatoria += i;
-        }
-        return sumatoria; 
-    }
-   
-   public long sumatoriaGauss(long n){
-       return (n*(n+1))/2;
-   }
-   
-   public long sumatoriaRecursiva(long n, long i){
-       if(n == i){
-           return i;
-       } else{
-           return i + sumatoriaRecursiva(n,i+1);
-       }
-   }
-   
    public XYSeries leerArchivo(String nombreArchivo){
        XYSeries linea = new XYSeries(nombreArchivo); 
        try{
